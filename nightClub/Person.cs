@@ -8,6 +8,7 @@ namespace nightClub
         public bool IsStaff { get; set; }
         public bool HasTicket { get; set; }
 
+        public Person(){}
         public Person(string fullName, int age, bool isOutfitComplete, bool isStaff, bool hasTicket)
         {
             Name = fullName;
@@ -16,6 +17,5 @@ namespace nightClub
             IsStaff = isStaff;
             HasTicket = hasTicket;            
         }
-    //    public abstract void person();
     }    
 }
