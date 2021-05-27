@@ -8,10 +8,17 @@ namespace nightClub
         {
             if (age >= 18 && checkOutfit == true && checkIsStaff == false && checkHasTicket == true)
             {
-                Console.WriteLine("Welcome to the Club");
-                //customer class that has private makeOrder() method
-                //that also has public givingOrder() method that
-                // (calls) [attendant method gettingOrder]                
+                Console.WriteLine($"Welcome to the Club {name}\nWould you like to make an Order?\nYes Or No");
+                string reply = Console.ReadLine().ToLower();
+                if(reply == "yes")
+                {
+                    customer.MakeOrder();
+                }
+                else
+                {
+                    Console.WriteLine("Enjoy the music\nThank you.");
+
+                }              
             }
             else if (age >= 18 && checkOutfit == true && checkIsStaff == true && checkHasTicket == false)
             {

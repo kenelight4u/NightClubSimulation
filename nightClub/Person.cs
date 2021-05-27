@@ -9,13 +9,13 @@ namespace nightClub
         public bool HasTicket { get; set; }
 
         public Person(){}
-        public Person(string fullName, int age, bool isOutfitComplete, bool isStaff, bool hasTicket)
-        {
-            Name = fullName;
-            Age = age;
-            IsOutfitComplete = isOutfitComplete;
-            IsStaff = isStaff;
-            HasTicket = hasTicket;            
-        }
+        // public Person(string fullName, int age, bool isOutfitComplete, bool isStaff, bool hasTicket)
+        // {
+        //     Name = fullName;
+        //     Age = age;
+        //     IsOutfitComplete = isOutfitComplete;
+        //     IsStaff = isStaff;
+        //     HasTicket = hasTicket;            
+        // }
     }    
 }
