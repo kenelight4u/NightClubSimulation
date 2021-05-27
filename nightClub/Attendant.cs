@@ -1,17 +1,53 @@
 using System;
+using System.Collections.Generic;
 
 namespace nightClub
 {
-    public class attendant
+    public class Attendant
     {
-        public static void PresentBillToCustomer()
+        private List<Products> brands;
+
+       public Attendant()
+       {
+           brands = new List<Products>();
+       }
+
+        public List<Products> GetBrands()
         {
-            throw new NotImplementedException();
+            return this.brands;
         }
 
-        public static void GettingOrderFromCustomer()
+        public string SaveOrderFromCustomer(string brandName)
         {
-            throw new NotImplementedException();
+            Products product = new Products(brands.Count + 1, $"{brandName}  ");
+            brands.Add(product);
+            return product.BrandName;
+        }
+
+        public IEnumerable<string> GetSaveOrderFromCustomer()
+        {
+            foreach (var item in brands)
+            {
+                yield return item.BrandName + item.QrCode; 
+            }
+        }
+        //Call for Bill Calculation
+        public void PayBill()
+        {
+            decimal totalPriceOfItemsPurchased = PresentBillToCustomer(this.brands);
+            Console.WriteLine($"{totalPriceOfItemsPurchased}");
+        }
+
+        //Calls BarMan to GetTotalPrice method
+        private static decimal PresentBillToCustomer(List<Products> itemsPurchased)
+        {
+            decimal totalBill = BarMan.GetTotalPricesOfGood(itemsPurchased);
+            return totalBill;
+        }
+
+        public void Clear()
+        {
+            brands.Clear();
         }
     }
 }

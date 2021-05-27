@@ -6,7 +6,8 @@ namespace nightClub
     {
         static void Main(string[] args)
         {
-            PersonInput.AcceptUserInput();         
+            // PersonInput.AcceptUserInput();  
+            AttendantEquiry.GetEnquiryFromCustomer();       
         }
     }
 }

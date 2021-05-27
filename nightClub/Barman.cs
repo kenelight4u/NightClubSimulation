@@ -1,19 +1,28 @@
 using System;
+using System.Collections.Generic;
 
 namespace nightClub
 {
     public class BarMan
     {
-        private static void checkToGetPrice()
+        private static decimal ScanToGetPrice(Products brand)
         {
-            throw new NotImplementedException();
-            //Has a list of drinks and their prices.
+            if (brand.QrCode != null)
+            {
+                return Convert.ToDecimal(brand.Price);
+            }
+            throw new Exception("INVALID QRCODE");
         }
 
-        private static void calculateProce()
+        public static decimal GetTotalPricesOfGood(List<Products> brands)
         {
-            throw new NotImplementedException();
-            //Has the calculations for all the drinks ordered by the customer.
+            decimal totalPrice = 0.0M;
+            foreach (var item in brands)
+            {
+                totalPrice += Convert.ToDecimal(ScanToGetPrice(item));
+                // totalPrice += Convert.ToDecimal(item.Price);
+            }            
+            return totalPrice;
         }
 
 
