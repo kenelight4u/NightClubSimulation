@@ -14,27 +14,35 @@ namespace NightClub
               string validateReply = Validation.IsStringYesOrNo(reply);
                 if (validateReply == "yes")
                 {
-                    Customer.MakeOrder();    
+                    Customer.MakeOrder();
                 }
                 else if (validateReply == "no")
                 {
                     Console.WriteLine("Enjoy the music\nThank you.");
                     Console.ReadKey();
                 }
+
             }
             else if (age >= 18 && checkOutfit == true && checkHasTicket == false)
             {
-                Console.WriteLine("Please get a tciket if you not a Staff.");
-                //i was thinking we create a feature here that alllows the person buy a ticket...
+                Console.WriteLine("Please get a Ticket");
+                Console.ReadKey();
             }
-             else if (age >= 18 && checkOutfit == false && checkHasTicket == false)
-             {
-                 Console.WriteLine("Please put on the complete outfit before we can grant you access to the club\nThanks.");
-             }
-             else if(age < 18 && checkOutfit == true && checkHasTicket == true)
-             {
-                 Console.WriteLine("You are too young to enter the Night Club.\nPlease go back home to your mommy.");
-             }
+            else if (age >= 18 && checkOutfit == false && checkHasTicket == true)
+            {
+                Console.WriteLine("Please put on the complete outfit before we can grant you access to the club\nThanks.");
+                Console.ReadKey();
+            }
+            else if (age >= 18 && checkOutfit == false && checkHasTicket == false)
+            {
+                Console.WriteLine("Please put on the complete Outfit and get a Ticket before we can grant you access to the club\nThanks.");
+                Console.ReadKey();
+            }
+            else if (age < 18 && checkOutfit == true && checkHasTicket == true)
+            {
+                Console.WriteLine("You are too young to enter the Night Club.\nPlease go back home to your mommy.");
+                Console.ReadKey();
+            }
         }
 
         public static void GetBouncerCheckResult(string name, int age, bool checkOutfit, bool checkHasTicket)
@@ -47,5 +55,5 @@ namespace NightClub
             throw new NotImplementedException();
         }
     }
-    
+
 }
