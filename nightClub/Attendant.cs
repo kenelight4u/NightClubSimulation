@@ -14,7 +14,6 @@ namespace NightClub
             Console.WriteLine("4 : Drink NAme : don-Simon --Price : 4000");
             System.Console.WriteLine();
             // Console.WriteLine("select 1,2,3 or 4 to make your order.");
-            
         }
         public static void PresentBillToCustomer()
         {

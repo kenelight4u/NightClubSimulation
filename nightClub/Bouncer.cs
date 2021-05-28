@@ -11,7 +11,7 @@ namespace NightClub
                 Console.WriteLine($"Welcome to the Club {name}\nWould you like to make an Order?\nYes Or No");
                 string reply = Console.ReadLine().ToLower();
 
-                string validateReply = Validation.IsStringYesOrNo(reply);
+              string validateReply = Validation.IsStringYesOrNo(reply);
                 if (validateReply == "yes")
                 {
                     Customer.MakeOrder();    
@@ -21,7 +21,6 @@ namespace NightClub
                     Console.WriteLine("Enjoy the music\nThank you.");
                     Console.ReadKey();
                 }
-               
             }
             else if (age >= 18 && checkOutfit == true && checkHasTicket == false)
             {
