@@ -8,6 +8,7 @@ namespace NightClub
         {
             if (age >= 18 && checkOutfit == true && checkHasTicket == true)
             {
+                
                 Console.WriteLine($"Welcome to the Club {name}\nWould you like to make an Order?\nYes Or No");
                 string reply = Console.ReadLine().ToLower();
 
@@ -18,6 +19,9 @@ namespace NightClub
                 }
                 else if (validateReply == "no")
                 {
+                    Console.Clear();
+                    Dj.GetCurrentMusic();
+                    Console.WriteLine();
                     Console.WriteLine("Enjoy the music\nThank you.");
                     Console.ReadKey();
                 }
