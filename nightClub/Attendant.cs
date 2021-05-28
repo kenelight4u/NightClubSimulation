@@ -13,7 +13,6 @@ namespace NightClub
             Console.WriteLine("3 : Drink NAme : beer --Price : 3000");
             Console.WriteLine("4 : Drink NAme : don-Simon --Price : 4000");
             System.Console.WriteLine();
-
         }
         public static void PresentBillToCustomer()
         {
