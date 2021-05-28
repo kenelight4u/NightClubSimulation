@@ -23,7 +23,7 @@ namespace NightClub
             Attendant.ShowMenu();
             Console.WriteLine("How many drinks would u like to order");
             string choice = Console.ReadLine();
-            int validateChoice = Validation.ValidateAllIntInput(choice); 
+            int validateChoice = Validation.ValidateAllIntInput(choice);
             // choice--;
 
             Console.WriteLine("select 1,2,3 or 4 to make your order.");
@@ -31,7 +31,7 @@ namespace NightClub
             {
                 Console.Write("Enter your Choice: ");
                 string customerChoice = Console.ReadLine();
-                int validateCustomerChoice = Validation.ValidateAllIntInput(customerChoice); 
+                int validateCustomerChoice = Validation.ValidateAllIntInput(customerChoice);
                 Attendant.GettingOrderFromCustomer(validateCustomerChoice);
             }
             Console.Clear();
@@ -42,13 +42,13 @@ namespace NightClub
             {
                 Paybill();
                 Console.ReadKey();
-                
+
             }
             else if (validateReply == "no")
             {
                 MakeOrder();
             }
-            
+
         }
         public static void Paybill()
         {
