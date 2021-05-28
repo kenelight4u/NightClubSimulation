@@ -22,12 +22,14 @@ namespace NightClub
                         AcceptUserInput();
                         break;
                     case "staff":
+                        Dj.GetCurrentMusic();
+                        Console.WriteLine();
                         Console.WriteLine("Enter your NAME: ");
                         string staffName = Console.ReadLine().ToUpper();
                         string validateStaffName = Validation.ValidateAllStringInput(staffName);
 
                         Console.WriteLine("Enter your STAFF ID: ");
-                        string staffId = Console.ReadLine().ToUpper();
+                        string staffId = "STF"+Console.ReadLine().ToUpper();
                         Staff id = new Staff(validateStaffName, staffId);
 
                         switch (id.StaffId)
@@ -55,6 +57,8 @@ namespace NightClub
         public static void AcceptUserInput()
         {
             Console.Clear();
+            Dj.GetCurrentMusic();
+            Console.WriteLine();
             Console.WriteLine("Welcome To The Night Club..\nPlease Provide Your details.");
             Console.WriteLine("Full Name");
             string name = Console.ReadLine();
