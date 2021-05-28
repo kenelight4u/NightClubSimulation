@@ -1,30 +1,46 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace nightClub
+namespace NightClub
 {
     public class BarMan
     {
-        private static decimal ScanToGetPrice(Products brand)
+        private static List<decimal> priceOfDrinksPurchased = new List<decimal>();
+            
+        public static void PresentCalculatedPrice()
         {
-            if (brand.QrCode != null)
-            {
-                return Convert.ToDecimal(brand.Price);
-            }
-            throw new Exception("INVALID QRCODE");
+            
+            Console.WriteLine($"Total Price of all drinks Bought : {priceOfDrinksPurchased.Sum()}");
         }
 
-        public static decimal GetTotalPricesOfGood(List<Products> brands)
+        private static void CalculatePrice(int choice)
         {
-            decimal totalPrice = 0.0M;
-            foreach (var item in brands)
-            {
-                totalPrice += Convert.ToDecimal(ScanToGetPrice(item));
-                // totalPrice += Convert.ToDecimal(item.Price);
-            }            
-            return totalPrice;
+            Drinks drinks = new Drinks();
+            decimal price = 0;
+            switch(choice)
+                    {
+                        case 1:
+                        price = drinks.Andre;
+                        break;
+                        case 2:
+                        price = drinks.Smenorf;
+                        break;
+                        case 3:
+                        price = drinks.Beer;
+                        break;
+                        case 4:
+                        price = drinks.Don_Simon;
+                        break;
+                    }
+                   priceOfDrinksPurchased.Add(price);
+           
+            //Has the calculations for all the drinks ordered by the customer.
         }
 
-
+        public static void GetCalculatedPrice(int choice)
+        {
+            CalculatePrice(choice);
+        }
     }
 }

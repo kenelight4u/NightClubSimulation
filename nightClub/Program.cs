@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace nightClub
+namespace NightClub
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // PersonInput.AcceptUserInput();  
-            AttendantEquiry.GetEnquiryFromCustomer();       
+            EnterInputs.VerifyIfStaffOrCustomer();         
         }
     }
 }

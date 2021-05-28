@@ -1,53 +1,30 @@
 using System;
 using System.Collections.Generic;
 
-namespace nightClub
+namespace NightClub
 {
     public class Attendant
     {
-        private List<Products> brands;
-
-       public Attendant()
-       {
-           brands = new List<Products>();
-       }
-
-        public List<Products> GetBrands()
+        public static void ShowMenu()
         {
-            return this.brands;
+            Console.WriteLine("Here is a list of our current drink and their prices.");
+            Console.WriteLine("1 : Drink NAme : Andre --Price : 1000");
+            Console.WriteLine("2 : Drink NAme : smenorf --Price : 2000");
+            Console.WriteLine("3 : Drink NAme : beer --Price : 3000");
+            Console.WriteLine("4 : Drink NAme : don-Simon --Price : 4000");
+            System.Console.WriteLine();
+            // Console.WriteLine("select 1,2,3 or 4 to make your order.");
+            
+        }
+        public static void PresentBillToCustomer()
+        {
+            BarMan.PresentCalculatedPrice();   
         }
 
-        public string SaveOrderFromCustomer(string brandName)
+        public static void GettingOrderFromCustomer(int choice)
         {
-            Products product = new Products(brands.Count + 1, $"{brandName}  ");
-            brands.Add(product);
-            return product.BrandName;
-        }
+            BarMan.GetCalculatedPrice(choice);
 
-        public IEnumerable<string> GetSaveOrderFromCustomer()
-        {
-            foreach (var item in brands)
-            {
-                yield return item.BrandName + item.QrCode; 
-            }
-        }
-        //Call for Bill Calculation
-        public void PayBill()
-        {
-            decimal totalPriceOfItemsPurchased = PresentBillToCustomer(this.brands);
-            Console.WriteLine($"{totalPriceOfItemsPurchased}");
-        }
-
-        //Calls BarMan to GetTotalPrice method
-        private static decimal PresentBillToCustomer(List<Products> itemsPurchased)
-        {
-            decimal totalBill = BarMan.GetTotalPricesOfGood(itemsPurchased);
-            return totalBill;
-        }
-
-        public void Clear()
-        {
-            brands.Clear();
         }
     }
 }

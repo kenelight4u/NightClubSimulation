@@ -1,29 +1,58 @@
 using System;
+using System.Collections.Generic;
 
-namespace nightClub
+namespace NightClub
 {
-    public class Customer
+    public class Customer : Person
     {
-        private static void makeOrder()
+        public int Age { get; set; }
+        public bool IsOutfitComplete { get; set; }
+        public bool HasTicket { get; set; }
+
+        public Customer(string name, int age, bool isOutfitComplete, bool hasTicket)
         {
-            //allows the customer to set is order ..
-            throw new NotImplementedException();
+            Name = name;
+            Age = age;
+            IsOutfitComplete = isOutfitComplete;
+            HasTicket = hasTicket;
         }
 
-        public static void givingOrder()
+        public static void MakeOrder()
         {
-            //Send the order to the attendant method..
-            //gettingOrderFromCustomer()
-            throw new NotImplementedException();
+            Console.Clear();
+            Attendant.ShowMenu();
+            Console.WriteLine("How many drinks would u like to order");
+            string choice = Console.ReadLine();
+            int validateChoice = Validation.ValidateAllIntInput(choice); 
+            // choice--;
+
+            Console.WriteLine("select 1,2,3 or 4 to make your order.");
+            for (int i = 1; i <= validateChoice; i++)
+            {
+                Console.Write("Enter your Choice: ");
+                string customerChoice = Console.ReadLine();
+                int validateCustomerChoice = Validation.ValidateAllIntInput(customerChoice); 
+                Attendant.GettingOrderFromCustomer(validateCustomerChoice);
+            }
+            Console.Clear();
+            Console.WriteLine("Are you done for the night?\nYes Or No");
+            string reply = Console.ReadLine().ToLower();
+            string validateReply = Validation.IsStringYesOrNo(reply);
+            if (validateReply == "yes")
+            {
+                Paybill();
+                Console.ReadKey();
+                
+            }
+            else if (validateReply == "no")
+            {
+                MakeOrder();
+            }
+            
         }
-
-        // Attendant enquiry = new Attendant();
-        
-        public void Paybill()
+        public static void Paybill()
         {
-
-            // decimal totalPriceOfItemsPurchased = Attendant.PresentBillToCustomer(enquiry.GetBrands());
-            // Console.WriteLine($"{totalPriceOfItemsPurchased}");
+            Attendant.PresentBillToCustomer();
 
             //calls the method presentBillToCustomer()
             //Then picks the variable total cost from that method 
