@@ -8,6 +8,7 @@ namespace NightClub
         public static void ShowMenu()
         {
             Console.WriteLine("Here is a list of our current drink and their prices.");
+
             Console.WriteLine("1 : Drink Name : Andre --Price : 1000");
             Console.WriteLine("2 : Drink Name : smenorf --Price : 2000");
             Console.WriteLine("3 : Drink Name : beer --Price : 3000");
