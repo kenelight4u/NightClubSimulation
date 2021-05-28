@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace nightClub
+namespace NightClub
 {
     public class Attendant
     {
@@ -9,11 +9,11 @@ namespace nightClub
         {
             Console.WriteLine("Here is a list of our current drink and their prices.");
             Console.WriteLine("1 : Drink NAme : Andre --Price : 1000");
-            Console.WriteLine("2 : Drink NAme : smenorf --Price : 3000");
-            Console.WriteLine("3 : Drink NAme : beer --Price : 2500");
-            Console.WriteLine("4 : Drink NAme : don-Simon --Price : 3500");
-            Console.WriteLine("select 1,2,3 or 4 to make your order.");
-            
+            Console.WriteLine("2 : Drink NAme : smenorf --Price : 2000");
+            Console.WriteLine("3 : Drink NAme : beer --Price : 3000");
+            Console.WriteLine("4 : Drink NAme : don-Simon --Price : 4000");
+            System.Console.WriteLine();
+            // Console.WriteLine("select 1,2,3 or 4 to make your order.");
         }
         public static void PresentBillToCustomer()
         {

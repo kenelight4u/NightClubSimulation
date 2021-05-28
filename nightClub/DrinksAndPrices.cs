@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace nightClub
+namespace NightClub
 {
         public class Drinks
         {
