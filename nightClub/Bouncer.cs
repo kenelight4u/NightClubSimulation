@@ -14,7 +14,7 @@ namespace NightClub
                 Console.WriteLine($"Welcome to the Club {name}\nWould you like to make an Order?\nYes Or No");
                 string reply = Console.ReadLine().ToLower();
 
-                string validateReply = Validation.IsStringYesOrNo(reply);
+              string validateReply = Validation.IsStringYesOrNo(reply);
                 if (validateReply == "yes")
                 {
                     regularOrder.MakeOrder();
