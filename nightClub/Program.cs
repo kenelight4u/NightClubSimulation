@@ -6,7 +6,8 @@ namespace NightClub
     {
         static void Main(string[] args)
         {
-            EnterInputs.VerifyIfStaffOrCustomer();
+            EnterInputs callToVerify = new EnterInputs();
+            callToVerify.VerifyIfStaffOrCustomer();
         }
     }
 }

@@ -32,6 +32,12 @@ namespace NightClub
                 case 4:
                     price = drinks.Don_Simon;
                     break;
+                case 5:
+                    price = drinks.Shisha;
+                    break;
+                case 6:
+                    price = drinks.Cocaine;
+                    break;
             }
             priceOfDrinksPurchased.Add(price);
 

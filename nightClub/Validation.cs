@@ -37,6 +37,18 @@ namespace NightClub
             return checkIsOutfitComplete;
         }
 
+        public static string CheckForVipOrRegular(string checkForVipOrReg)
+        {
+            while (checkForVipOrReg != "v" && checkForVipOrReg != "r")
+            {
+                Console.WriteLine($"Invalid option");
+                Console.WriteLine("V for VIP or R for REGULAR");
+                checkForVipOrReg = Console.ReadLine().ToLower();
+            }
+
+            return checkForVipOrReg;
+        }
+
         public static string IsStringStaffGuestQuit(string checkIsOutfitComplete)
         {
             while (checkIsOutfitComplete != "staff" && checkIsOutfitComplete != "guest" && checkIsOutfitComplete != "exit")

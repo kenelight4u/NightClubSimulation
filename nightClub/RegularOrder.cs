@@ -1,23 +1,10 @@
 using System;
-using System.Collections.Generic;
 
 namespace NightClub
 {
-    public class Customer : Person
+    public class RegularOrder : Order
     {
-        public int Age { get; set; }
-        public bool IsOutfitComplete { get; set; }
-        public bool HasTicket { get; set; }
-
-        public Customer(string name, int age, bool isOutfitComplete, bool hasTicket)
-        {
-            Name = name;
-            Age = age;
-            IsOutfitComplete = isOutfitComplete;
-            HasTicket = hasTicket;
-        }
-
-        public static void MakeOrder()
+        public override void MakeOrder()
         {
             Console.Clear();
             Attendant.ShowMenu();
@@ -49,14 +36,10 @@ namespace NightClub
                 MakeOrder();
             }
         }
-        public static void Paybill()
-        {
-            Attendant.PresentBillToCustomer();
 
-            //calls the method presentBillToCustomer()
-            //Then picks the variable total cost from that method 
-            //then sets the the amount to be paid 
-            //and process finalizing..to exit.
+        public override void Paybill()
+        {
+           Attendant.PresentBillToCustomer();
         }
     }
 }

@@ -8,6 +8,8 @@ namespace NightClub
         public decimal Smenorf { get; private set; }
         public decimal Beer { get; private set; }
         public decimal Don_Simon { get; private set; }
+        public decimal Shisha { get; private set; }
+        public decimal Cocaine { get; private set; }
 
         public Drinks()
         {
@@ -15,6 +17,8 @@ namespace NightClub
             this.Smenorf = 2000;
             this.Beer = 3000;
             this.Don_Simon = 4000;
+            this.Shisha = 1000;
+            this.Cocaine = 5000;
         }
     }
 
